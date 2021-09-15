@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\firstLib\firstLib.csproj" />
+    <ProjectReference Include="..\FirstLib\FirstLib.csproj" />
   </ItemGroup>
 
 </Project>

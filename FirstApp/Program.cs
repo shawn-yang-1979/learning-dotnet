@@ -1,8 +1,8 @@
 ﻿using System;
+using FirstLib;
 using Humanizer;
-using firstLib;
 
-namespace firstApp
+namespace FirstApp
 {
     class Program
     {
