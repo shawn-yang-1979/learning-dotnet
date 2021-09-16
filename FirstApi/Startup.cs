@@ -23,7 +23,7 @@ namespace FirstApi
 
             services.AddControllers();
             services.AddHealthChecks();
-            services.AddSingleton<Robot>();
+            services.AddSingleton<Bot>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FirstApi", Version = "v1" });
