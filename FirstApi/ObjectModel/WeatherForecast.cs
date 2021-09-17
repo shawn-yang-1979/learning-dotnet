@@ -1,6 +1,6 @@
 using System;
 
-namespace FirstApi
+namespace FirstApi.ObjectModel
 {
     public class WeatherForecast
     {

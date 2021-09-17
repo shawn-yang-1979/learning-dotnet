@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Threading;
+﻿using System;
+using System.Collections.Generic;
 using FirstLib;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -31,12 +31,31 @@ namespace FirstApi.Controllers
         [HttpPost]
         public decimal AddNumbers([FromBody] AddNumbersInput input)
         {
-            return _service.AddNumbers(input.numbers);
+            return _service.AddNumbers(input.Numbers);
+        }
+
+        [HttpPost]
+        public string MakeBreakfast()
+        {
+            DateTime departure = DateTime.Now;
+
+            _service.MakeBreakfast();
+
+            DateTime arrival = DateTime.Now;
+            TimeSpan travelTime = arrival - departure;
+            return $"Spent {travelTime.TotalSeconds} seconds.";
+        }
+
+        [HttpPost]
+        public string FindUniqueNumbers([FromBody] AddNumbersInput input)
+        {
+            IEnumerable<decimal> result = _service.FindUniqueNumbers(input.Numbers);
+            return result.ToString();
         }
     }
 
     public class AddNumbersInput
     {
-        public List<decimal> numbers { get; set; }
+        public List<decimal> Numbers { get; set; }
     }
 }

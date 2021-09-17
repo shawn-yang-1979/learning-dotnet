@@ -8,14 +8,14 @@ namespace firstUnitTest
         [Fact]
         public void Test1()
         {
-            Robot r = new();
-            Assert.Equal("Hi!", r.Greeting());
-            Assert.Equal(5, r.Split(10, 2));
+            Bot r = new();
+            Assert.Equal("Hi!", r.SayHi());
+            Assert.Equal("Each groups can have 5 candies.", r.SplitCandies(10, 2));
+            Assert.Equal("Each groups can have 4 candies. 1 candies remained.", r.SplitCandies(9, 2));
             Assert.Throws<DivideByZeroException>(() =>
             {
-                r.Split(1, 0);
+                r.SplitCandies(1, 0);
             });
-
         }
     }
 }
